@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2 part2</title>
+</head>
+
+<body>
+    <script>
+        var contactList = [];
+        var app = true;
+
+        do {
+            var input = prompt(" Enter the operation \n < add | search | exit >");
+
+            if (input == "add") {
+
+                addContact();
+            }
+            if (input == "search") {
+                searchContact();
+            }
+            if (input == "exit") {
+                app = false;
+            }
+
+        } while (app)
+
+        function addContact() {
+            var contacts = {
+                name: prompt("enter contact"),
+                phone: prompt(" enter phone ")
+            }
+            contactList.push(contacts);
+        }
+        function searchContact() {
+            var neput = prompt("put name or phone number ? ");
+            if (neput == "name") {
+                var name = prompt("enter name");
+
+                contactList.filter(function (item) {
+                    item.name == name;
+                    for (var i in item) {
+                        alert("name is " + item.name + " phone is " + item.phone);
+                    }
+                }
+                )
+            }
+            if (neput == "number") {
+                var number = prompt("enter number?");
+
+                contactList.filter(function (item) {
+                    item.phone == number;
+                    for (var i in item) {
+                        alert("name is  " + item.name + " and phone is " + item.phone);
+                    }
+                }
+                )
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
